@@ -2537,6 +2537,8 @@ body {
     display: flex;
     flex-direction: column;
     gap: 12px; /* 按钮之间的间距 */
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 /* 磨砂半透明按钮主体 */
@@ -2771,7 +2773,7 @@ body {
     -webkit-backdrop-filter: blur(12px);
     border: 1px solid rgba(255, 255, 255, 0.6); /* 边框调亮一点 */
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2); /* 阴影稍微加深一点点，提升立体感 */
-    border-radius: 50px; 
+    border-radius: 30px; 
     transition: all 0.3s ease;
 }
 
