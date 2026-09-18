@@ -2498,13 +2498,13 @@ body {
     /* background-attachment: fixed; */
 
     background-color: transparent;
-    min-height: 100vh;
+    min-height: 670px;
     min-width: 260px;
     display: flex;
     justify-content: center;
-    align-items: flex-start;
-    padding: 50px 20px;
-
+    align-items: center;
+    padding-top: 50px;
+    padding-bottom: 90px;
     padding-right: 30px;
     padding-left: 30px;
 
@@ -2717,7 +2717,7 @@ body {
     width: 100%;
     text-align: center;
     margin-top: 10px; /* 与上方的直播间拉开一点距离 */
-    padding-bottom: 20px; /* 距离屏幕最底部留出呼吸空间 */
+    padding-bottom: 10px; /* 距离屏幕最底部留出呼吸空间 */
     font-size: 12px;
     color: rgba(6, 6, 6, 0.6); /* 使用半透明白色，避免喧宾夺主 */
     line-height: 1.8;
@@ -2748,7 +2748,7 @@ body {
     opacity: 0.6; /* 降低整体透明度，使其看起来处于灰色/未激活状态 */
     cursor: not-allowed; /* 电脑端鼠标悬浮时显示为“禁止”图标 */
     pointer-events: none; /* 彻底阻断点击事件和悬浮动画，无法跳转 */
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
 }
 
 /* 针对禁用状态下，右侧提示文字的样式调整 */
@@ -2791,4 +2791,20 @@ body {
 .btn-icon svg {
     font-size: 24px;
     color: #333333;  /* 【修改】图标统一改为深灰色 */
+}
+
+/* ================= 底部版权与技术支持 ================= */
+.footer {
+    position: absolute; /* 【新增】绝对定位 */
+    bottom: 18px;       /* 【新增】距离页面最底部 20px */
+    left: 0;            /* 【新增】确保宽度从最左侧开始伸展 */
+    width: 100%;
+    text-align: center;
+    
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.6); 
+    line-height: 1.8;
+    letter-spacing: 0.5px;
+    
+    z-index: 999; /* 【新增】确保不被极光背景遮挡 */
 }
