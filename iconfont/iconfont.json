@@ -1,0 +1,37 @@
+{
+  "id": "",
+  "name": "",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "2282553",
+      "name": "QQ群",
+      "font_class": "QQqun",
+      "unicode": "e504",
+      "unicode_decimal": 58628
+    },
+    {
+      "icon_id": "17335273",
+      "name": "比赛",
+      "font_class": "bisai",
+      "unicode": "e6a9",
+      "unicode_decimal": 59049
+    },
+    {
+      "icon_id": "17687955",
+      "name": "直播live",
+      "font_class": "zhibolive",
+      "unicode": "e63f",
+      "unicode_decimal": 58943
+    },
+    {
+      "icon_id": "34218631",
+      "name": "录像下载",
+      "font_class": "luxiangxiazai",
+      "unicode": "e865",
+      "unicode_decimal": 59493
+    }
+  ]
+}
