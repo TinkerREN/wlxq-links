@@ -2477,46 +2477,45 @@ body {
 
 @media only screen and (max-width:769px) {}
 /* ================= 基础重置 ================= */
+/* ================= 基础重置 ================= */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-   body {
+body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: transparent; 
     
-    /* 增加更多过渡颜色，让变色更丰富 */
-    /* background: linear-gradient(135deg, #fff16f, #ffc477, #ff9a9e, #ff9e78); */
-    
-    /* 将背景放大 4倍，留出移动空间 */
-    /* background-size: 400% 400%; */
-    
-    /* 应用名为 gradientMove 的动画：持续15秒、平滑过渡、无限循环 */
-    /* animation: gradientMove 15s ease infinite; */
-    
-    /* background-attachment: fixed; */
-
-    background-color: transparent;
-    min-height: 670px;
-    min-width: 260px;
+    /* 关键 1：让 body 至少有视口的高度，并且是 Flex 容器 */
+    min-height: 100vh;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-top: 50px;
-    padding-bottom: 90px;
-    padding-right: 30px;
-    padding-left: 30px;
-
+    flex-direction: column;
+    align-items: center; /* 水平居中 */
+    
+    position: relative;
+    overflow-x: hidden; /* 防止因为部分动画元素过宽出现横向滚动条 */
 }
+
 /* ================= 主容器 ================= */
 .container {
     width: 100%;
-    max-width: 480px; /* 适合手机和桌面端浏览的适中宽度 */
+    max-width: 480px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 30px; /* 各个大模块之间的间距 */
+    gap: 32px;
+    
+    /* 关键 2：利用 margin 魔法！
+       margin-top: auto 和 margin-bottom: auto 
+       会将 container 在 body 剩余的垂直空间中绝对居中！ */
+    margin-top: auto;
+    margin-bottom: auto;
+    
+    /* 上下预留一定的呼吸空间，防止在极小屏幕（出现滚动条时）内容贴着浏览器边缘 */
+    padding: 40px 20px;
+    
     position: relative;
     z-index: 999;
 }
@@ -2718,31 +2717,23 @@ body {
 .footer {
     width: 100%;
     text-align: center;
-    margin-top: 10px; /* 与上方的直播间拉开一点距离 */
-    padding-bottom: 10px; /* 距离屏幕最底部留出呼吸空间 */
+    padding-bottom: 20px; /* 距离屏幕底部留出 20px 空隙 */
     font-size: 12px;
-    color: rgba(6, 6, 6, 0.6); /* 使用半透明白色，避免喧宾夺主 */
+    color: rgba(0, 0, 0, 0.6);
     line-height: 1.8;
     letter-spacing: 0.5px;
-    opacity: 0.4;
+    z-index: 999;
 }
 
-.footer p {
-    margin: 0; /* 消除段落自带的外边距 */
-}
-
-/* 如果技术支持文本包含超链接的样式 */
 .footer a {
-    color: rgba(75, 75, 75, 0.8);
-    text-decoration: none; /* 默认不显示下划线 */
+    color: #333333;
+    text-decoration: none;
     transition: color 0.3s ease;
-    font-weight: 700;
 }
 
-/* 鼠标悬浮在技术支持链接上时的交互 */
 .footer a:hover {
-    color: #1b1b1b; /* 悬浮时变亮 */
-    text-decoration: underline; /* 悬浮时显示下划线提示可点击 */
+    color: #000000;
+    text-decoration: underline;
 }
 
 /* ================= 按钮的禁用(不可点击)状态 ================= */
@@ -2794,19 +2785,9 @@ body {
     font-size: 24px;
     color: #333333;  /* 【修改】图标统一改为深灰色 */
 }
-
-/* ================= 底部版权与技术支持 ================= */
-.footer {
-    position: absolute; /* 【新增】绝对定位 */
-    bottom: 18px;       /* 【新增】距离页面最底部 20px */
-    left: 0;            /* 【新增】确保宽度从最左侧开始伸展 */
-    width: 100%;
-    text-align: center;
-    
-    font-size: 12px;
-    color: rgba(0, 0, 0, 0.6); 
-    line-height: 1.8;
-    letter-spacing: 0.5px;
-    
-    z-index: 999; /* 【新增】确保不被极光背景遮挡 */
+/* ================= 响应式适配：高度过小时隐藏 Footer ================= */
+@media (max-height: 630px) {
+    .footer {
+        display: none; /* 屏幕高度小于等于 630px 时，彻底隐藏 Footer */
+    }
 }
