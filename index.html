@@ -65,15 +65,16 @@
                 <span class="btn-text">机厅直播</span>
                 <span class="btn-arrow">点击前往-&gt;</span>
             </a>
-            <a href="https://rec-dl.tinkerren.cn" class="glass-btn">
-                <div class="btn-icon">
-                    <svg class="icon" aria-hidden="true">
-                        <use xlink:href="#icon-luxiangxiazai"></use>
-                    </svg>
-                </div>
-                <span class="btn-text">录像下载</span>
-                <span class="btn-arrow">点击前往-&gt;</span>
-            </a>
+        <!-- 录像下载（外观变灰，且点击弹窗） -->
+        <a href="#" class="glass-btn maintenance" onclick="alert('下载系统维护中，暂不可下载，录像功能仍可用'); return false;">
+            <div class="btn-icon">
+                <svg class="icon" aria-hidden="true">
+                    <use xlink:href="#icon-luxiangxiazai"></use>
+                </svg>
+            </div>
+            <span class="btn-text">录像下载</span>
+            <span class="btn-arrow">维护中</span>
+        </a>
             <!-- 当前赛事（无赛事，不可点击） -->
         <a href="https://maievent.tinkerren.cn/" class="glass-btn disabled">
         <div class="btn-icon">
